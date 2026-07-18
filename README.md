@@ -55,6 +55,31 @@ either:
 This theme doesn't handle supplier integration — that's a backend/ops decision,
 not a theme change.
 
+## Product templates
+Three alternate product templates are included — assign them per-product in
+Shopify Admin under **Product → Theme template** (right-hand sidebar):
+
+| Template | Use for | Key features |
+|---|---|---|
+| `product.apparel.json` | Regular T-shirts, hoodies, sweatshirts, etc. | Size/color swatches, size guide popup, fabric & fit tab |
+| `product.customizable.json` | AOP apparel, custom-print clothing | Required design upload, print/proofing info tab |
+| `product.print.json` | Business cards, banners, flyers, etc. | Required artwork upload, quantity-tier variants, paper specs tab |
+| *(default)* `product.json` | Anything else (accessories, drinkware, bags) | Standard Dawn layout |
+
+For the size guide popup on the apparel template, create a "Size Guide" page
+under **Online Store → Pages** and link it in the theme customizer (the block
+is already added, just needs a page selected).
+
+## Product import (CSV)
+`product-import-templates/` has two starter CSVs matching your category
+structure — edit them with your real SKUs, prices, and image URLs, then import
+via **Products → Import** in Shopify Admin:
+- `apparel-with-variants.csv` — Size + Color variant structure (T-shirts, hoodies)
+- `print-products.csv` — Quantity-tier variant structure (business cards, flyers)
+
+After import, remember to manually set each product's **Theme template** to
+match (apparel vs. customizable vs. print) — CSV import doesn't carry that over.
+
 ## Custom design upload (new)
 Products can now accept a customer-uploaded design file (for AOP apparel, custom
 prints, etc.) with zero apps required:
