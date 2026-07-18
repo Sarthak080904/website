@@ -1,0 +1,108 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pod-page-hero",
+      "settings": {
+        "eyebrow": "Custom orders",
+        "heading": "Bring your design to life on products people actually use.",
+        "text": "<p>Upload artwork, choose a product, and share instructions. We review the file, confirm production details, and send the item for print-on-demand fulfillment.</p>"
+      }
+    },
+    "process": {
+      "type": "pod-process",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Choose the product",
+            "text": "Pick apparel, accessories, drinkware, posters, stickers, or business print products."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Upload artwork",
+            "text": "Use high-resolution PNG, JPG, or PDF files. Transparent PNG is best for apparel prints."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "We review details",
+            "text": "If the artwork, placement, or resolution needs attention, we contact you before printing."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Printed and shipped",
+            "text": "The production partner prints after purchase and ships the finished order to your address."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ],
+      "settings": {
+        "eyebrow": "Custom workflow",
+        "heading": "Simple enough for one item. Structured enough for bulk orders.",
+        "text": "<p>This page is designed for customers who want their own artwork printed or need a special product setup beyond the standard catalog.</p>"
+      }
+    },
+    "faq": {
+      "type": "pod-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What file type should I upload?",
+            "answer": "<p>PNG, JPG, and PDF are good starting formats. For apparel, use a high-resolution transparent PNG whenever possible.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Will I get a proof?",
+            "answer": "<p>Add your final proofing policy here. A good launch policy is to contact customers only when artwork quality or placement needs changes.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I order in bulk?",
+            "answer": "<p>Yes. Use the contact form with product type, quantity, deadline, delivery city, and artwork details.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "eyebrow": "Artwork help",
+        "heading": "Avoid print issues before production.",
+        "text": "<p>Good files make better products. These answers help customers submit artwork that is easier to print cleanly.</p>"
+      }
+    },
+    "contact": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Request a custom order",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "process",
+    "faq",
+    "contact"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pod-page-hero",
+      "settings": {
+        "eyebrow": "Size guide",
+        "heading": "Help customers choose the right fit before printing.",
+        "text": "<p>Add exact measurements after you choose suppliers and receive samples. This template is ready for apparel sizing guidance.</p>"
+      }
+    },
+    "guide": {
+      "type": "pod-faq",
+      "blocks": {
+        "guide_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How to measure",
+            "answer": "<p>Measure a similar product that fits well, then compare chest, length, shoulder, and sleeve measurements against the product size chart.</p>"
+          }
+        },
+        "guide_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Oversized fit",
+            "answer": "<p>Oversized products are intentionally relaxed. Add exact garment measurements and model references after sample testing.</p>"
+          }
+        },
+        "guide_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Between two sizes",
+            "answer": "<p>For a relaxed look, size up. For a closer fit, choose the smaller size. Replace this with supplier-specific guidance.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "guide_1",
+        "guide_2",
+        "guide_3"
+      ],
+      "settings": {
+        "eyebrow": "Fit notes",
+        "heading": "Replace starter copy with real measurements.",
+        "text": "<p>Accurate size charts reduce exchanges and customer confusion, especially for custom printed apparel.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "guide"
+  ]
+}

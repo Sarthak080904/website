@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pod-page-hero",
+      "settings": {
+        "eyebrow": "Help center",
+        "heading": "Answers for products, customization, shipping, and support.",
+        "text": "<p>Use this page as the customer support base before launch. Update it whenever supplier rules or product timelines change.</p>"
+      }
+    },
+    "faq": {
+      "type": "pod-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "What products can I customize?",
+            "answer": "<p>Eligible customizable products will show an upload field or customization instructions on the product page.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Do you keep inventory?",
+            "answer": "<p>The store is designed for print-on-demand, so products are usually produced after the order is placed.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I change an order after placing it?",
+            "answer": "<p>Changes may only be possible before production starts. Customers should contact support as quickly as possible.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Do colors always print exactly like my screen?",
+            "answer": "<p>Printed colors can vary slightly by material, printer, and screen settings. Add supplier-specific color guidance before launch.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Helpful details in one place.",
+        "text": "<p>Clear answers reduce abandoned carts and support messages.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "faq"
+  ]
+}

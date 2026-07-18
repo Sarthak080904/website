@@ -1,0 +1,69 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pod-page-hero",
+      "settings": {
+        "eyebrow": "About the brand",
+        "heading": "A modern custom product store built around creativity and low-waste production.",
+        "text": "<p>We create and curate designs for products that are printed only when customers order, making it easier to offer fresh ideas without overproducing stock.</p>"
+      }
+    },
+    "values": {
+      "type": "multicolumn",
+      "blocks": {
+        "value_1": {
+          "type": "column",
+          "settings": {
+            "title": "Design-led catalog",
+            "text": "<p>Products are selected around design potential, everyday usefulness, and clear personalization value.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "value_2": {
+          "type": "column",
+          "settings": {
+            "title": "Made after purchase",
+            "text": "<p>Printing after checkout helps reduce waste and lets the catalog evolve quickly with customer demand.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "value_3": {
+          "type": "column",
+          "settings": {
+            "title": "Quality learning loop",
+            "text": "<p>Samples, customer feedback, and supplier performance should guide which products stay and scale.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "value_1",
+        "value_2",
+        "value_3"
+      ],
+      "settings": {
+        "title": "What the store stands for",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "values"
+  ]
+}

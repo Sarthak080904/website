@@ -1,0 +1,102 @@
+{{ 'section-pod-faq.css' | asset_url | stylesheet_tag }}
+
+<section class="pod-faq">
+  <div class="pod-faq__inner page-width">
+    <div>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="pod-faq__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 class="pod-faq__heading">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.text != blank -%}
+        <div class="pod-faq__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+    </div>
+    <div class="pod-faq__items">
+      {%- for block in section.blocks -%}
+        <details class="pod-faq__item" {{ block.shopify_attributes }}>
+          <summary>{{ block.settings.question | escape }}</summary>
+          <div class="pod-faq__answer rte">{{ block.settings.answer }}</div>
+        </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "POD FAQ",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Need to know"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Clear answers before checkout."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Use this section to reduce doubts around custom artwork, production time, shipping, returns, and product quality.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "When will my order ship?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Most made-to-order products need production time before dispatch. Add your supplier's exact timeline here after sample testing.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "POD FAQ",
+      "blocks": [
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Are products printed only after I order?",
+            "answer": "<p>Yes. Most products are made to order, which helps avoid waste and lets us offer more designs and product types.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Can I upload my own artwork?",
+            "answer": "<p>On custom products, upload a high-resolution PNG, JPG, or PDF. We may contact you if the artwork needs adjustment before printing.</p>"
+          }
+        },
+        {
+          "type": "faq",
+          "settings": {
+            "question": "Can custom products be returned?",
+            "answer": "<p>Custom printed items are usually not returnable unless they arrive damaged, defective, or incorrectly printed. Replace this with your final legal policy before launch.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

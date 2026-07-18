@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pod-page-hero",
+      "settings": {
+        "eyebrow": "Shipping and returns",
+        "heading": "Made-to-order products need clear expectations.",
+        "text": "<p>Use this page to explain production time, shipping, tracking, damaged items, and custom-product return rules before customers buy.</p>"
+      }
+    },
+    "faq": {
+      "type": "pod-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Production time",
+            "answer": "<p>Most products are printed after checkout. Add your final production window after testing your chosen supplier.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Shipping and tracking",
+            "answer": "<p>Once the product ships, tracking details should be sent to the customer through Shopify email notifications.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Custom product returns",
+            "answer": "<p>Custom printed products are usually final sale unless damaged, defective, or incorrectly printed. Replace with your final legal policy.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Damaged or wrong item",
+            "answer": "<p>Ask customers to contact support with photos, packaging images, and order number within your chosen support window.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "eyebrow": "Policy draft",
+        "heading": "Finalize this after supplier testing.",
+        "text": "<p>These are strong starter policies, but confirm exact timelines, replacement rules, and legal wording before launch.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "faq"
+  ]
+}

@@ -1,0 +1,43 @@
+.pod-page-hero {
+  background:
+    linear-gradient(135deg, rgba(0, 94, 255, 0.12), rgba(242, 85, 61, 0.12)),
+    #f6f8fb;
+}
+
+.pod-page-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(26rem, 0.5fr);
+  gap: clamp(2.4rem, 5vw, 6rem);
+  align-items: end;
+  padding-block: clamp(4.8rem, 8vw, 9rem);
+}
+
+.pod-page-hero__eyebrow {
+  margin: 0 0 1rem;
+  color: #005eff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pod-page-hero__heading {
+  max-width: 84rem;
+  margin: 0;
+  color: #10131a;
+  font-size: clamp(4rem, 6vw, 7.6rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.pod-page-hero__text {
+  color: rgba(16, 19, 26, 0.72);
+  font-size: 1.8rem;
+  line-height: 1.55;
+}
+
+@media screen and (max-width: 989px) {
+  .pod-page-hero__inner {
+    grid-template-columns: 1fr;
+  }
+}
