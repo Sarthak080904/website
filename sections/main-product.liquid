@@ -210,6 +210,36 @@
                   </p>
                 {%- when 'custom_liquid' -%}
                   {{ block.settings.custom_liquid }}
+                {%- when 'custom_upload' -%}
+                  <div class="product-form__input product-form__custom-upload" {{ block.shopify_attributes }}>
+                    <label class="form__label" for="CustomUpload-{{ block.id }}-{{ section.id }}">
+                      {{ block.settings.label }}
+                      {%- if block.settings.required %} *{% endif -%}
+                    </label>
+                    <input
+                      type="file"
+                      id="CustomUpload-{{ block.id }}-{{ section.id }}"
+                      name="properties[{{ block.settings.label | default: 'Custom Design' }}]"
+                      form="{{ product_form_id }}"
+                      accept="image/png,image/jpeg,application/pdf"
+                      {% if block.settings.required %}required{% endif %}
+                    >
+                    {%- if block.settings.help_text != blank -%}
+                      <p class="form__label" style="font-size: 1.2rem; opacity: 0.7;">{{ block.settings.help_text }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.show_notes -%}
+                      <label class="form__label" for="CustomUploadNotes-{{ block.id }}-{{ section.id }}" style="margin-top: 1rem; display: block;">
+                        Special instructions (optional)
+                      </label>
+                      <textarea
+                        id="CustomUploadNotes-{{ block.id }}-{{ section.id }}"
+                        name="properties[Special Instructions]"
+                        form="{{ product_form_id }}"
+                        rows="2"
+                        class="text-area"
+                      ></textarea>
+                    {%- endif -%}
+                  </div>
                 {%- when 'collapsible_tab' -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                     <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -970,6 +1000,36 @@
           "id": "custom_liquid",
           "label": "t:sections.custom-liquid.settings.custom_liquid.label",
           "info": "t:sections.custom-liquid.settings.custom_liquid.info"
+        }
+      ]
+    },
+    {
+      "type": "custom_upload",
+      "name": "Custom design upload",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Field label",
+          "default": "Upload your design"
+        },
+        {
+          "type": "text",
+          "id": "help_text",
+          "label": "Help text",
+          "default": "Accepted files: JPG, PNG, PDF (max 20MB)"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Require a file before adding to cart",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_notes",
+          "label": "Show a notes field for special instructions",
+          "default": true
         }
       ]
     },

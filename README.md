@@ -55,6 +55,29 @@ either:
 This theme doesn't handle supplier integration — that's a backend/ops decision,
 not a theme change.
 
+## Custom design upload (new)
+Products can now accept a customer-uploaded design file (for AOP apparel, custom
+prints, etc.) with zero apps required:
+
+1. Go to **Online Store → Customize**, open any product page
+2. In the product template, click **Add block → Custom design upload**
+3. Configure the field label, help text, whether a file is required, and
+   whether to show a "special instructions" notes box
+4. Save
+
+The uploaded file becomes a line-item property, visible as a clickable link
+to you (the merchant) on the order page, in the cart, and at checkout.
+
+**Important:** file uploads only work with a **page-style cart** (not a drawer
+or popup) — this theme is already configured for that
+(`cart_type: page` in `config/settings_data.json`). If this ever gets changed
+in the theme editor's cart settings, uploads will silently stop reaching orders.
+
+Also note: Shopify does not enforce file size/type limits beyond the browser's
+`accept` attribute set on the input (currently JPG/PNG/PDF) — a user could
+still bypass this client-side restriction, so don't rely on it for strict
+validation of what customers send you.
+
 ## Making further changes
 Ask for changes here and pushes will land in this repo — pull the latest theme
 version in Shopify Admin to preview/publish after each push.
