@@ -1,0 +1,254 @@
+{{ 'section-pod-showcase.css' | asset_url | stylesheet_tag }}
+
+<section class="pod-showcase">
+  <div class="pod-showcase__inner page-width">
+    <div class="pod-showcase__copy{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="pod-showcase__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      <h1 class="pod-showcase__heading">{{ section.settings.heading | escape }}</h1>
+
+      {%- if section.settings.text != blank -%}
+        <div class="pod-showcase__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+
+      <div class="pod-showcase__actions">
+        {%- if section.settings.primary_label != blank -%}
+          <a
+            class="button button--primary pod-showcase__button"
+            {% if section.settings.primary_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.primary_link }}"
+            {% endif %}
+          >
+            {{ section.settings.primary_label | escape }}
+          </a>
+        {%- endif -%}
+
+        {%- if section.settings.secondary_label != blank -%}
+          <a
+            class="button button--secondary pod-showcase__button"
+            {% if section.settings.secondary_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.secondary_link }}"
+            {% endif %}
+          >
+            {{ section.settings.secondary_label | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="pod-showcase__stats" aria-label="Store highlights">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'stat' -%}
+            <div class="pod-showcase__stat" {{ block.shopify_attributes }}>
+              <strong>{{ block.settings.value | escape }}</strong>
+              <span>{{ block.settings.label | escape }}</span>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+
+    <div class="pod-showcase__media{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      <div class="pod-showcase__image-wrap">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 1800
+            | image_tag:
+              widths: '750, 990, 1200, 1500, 1800',
+              sizes: '(min-width: 990px) 52vw, 100vw',
+              loading: 'eager',
+              fetchpriority: 'high',
+              alt: section.settings.image_alt
+          }}
+        {%- else -%}
+          <img
+            src="{{ 'pod-hero.png' | asset_url }}"
+            width="1740"
+            height="921"
+            loading="eager"
+            fetchpriority="high"
+            alt="{{ section.settings.image_alt | default: 'Custom apparel and print-on-demand product mockups' | escape }}"
+          >
+        {%- endif -%}
+      </div>
+
+      <div class="pod-showcase__workflow" aria-label="How fulfillment works">
+        <p class="pod-showcase__workflow-title">{{ section.settings.workflow_title | escape }}</p>
+        <ol class="pod-showcase__steps">
+          <li class="pod-showcase__step">
+            <span class="pod-showcase__step-number">1</span>
+            <span>{{ section.settings.step_1 | escape }}</span>
+          </li>
+          <li class="pod-showcase__step">
+            <span class="pod-showcase__step-number">2</span>
+            <span>{{ section.settings.step_2 | escape }}</span>
+          </li>
+          <li class="pod-showcase__step">
+            <span class="pod-showcase__step-number">3</span>
+            <span>{{ section.settings.step_3 | escape }}</span>
+          </li>
+        </ol>
+        <div class="pod-showcase__chips" aria-label="Product types">
+          {%- assign chips = section.settings.product_chips | split: ',' -%}
+          {%- for chip in chips -%}
+            {%- assign chip_text = chip | strip -%}
+            {%- if chip_text != blank -%}
+              <span class="pod-showcase__chip">{{ chip_text | escape }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "POD showcase",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Print on demand store"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Design it once. Sell it everywhere."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Launch custom apparel, accessories, gifts, and print products without holding inventory. Customers order on your store, your production partner prints the design, and the finished product ships to their door.</p>"
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary button label",
+      "default": "Shop products"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary button link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button label",
+      "default": "Custom order"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary button link",
+      "default": "/pages/custom-orders"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Custom apparel and print-on-demand product mockups"
+    },
+    {
+      "type": "text",
+      "id": "workflow_title",
+      "label": "Workflow title",
+      "default": "How each order works"
+    },
+    {
+      "type": "text",
+      "id": "step_1",
+      "label": "Step 1",
+      "default": "Customer chooses a product and places an order."
+    },
+    {
+      "type": "text",
+      "id": "step_2",
+      "label": "Step 2",
+      "default": "Your design and order details go to the POD partner."
+    },
+    {
+      "type": "text",
+      "id": "step_3",
+      "label": "Step 3",
+      "default": "They print, pack, ship, and tracking is shared."
+    },
+    {
+      "type": "text",
+      "id": "product_chips",
+      "label": "Product chips",
+      "default": "T-shirts, Hoodies, Mugs, Posters, Tote bags"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "0"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Inventory needed"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "POD showcase",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "value": "0",
+            "label": "Inventory needed"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "24/7",
+            "label": "Online ordering"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "Many",
+            "label": "Products from one design"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

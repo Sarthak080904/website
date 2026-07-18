@@ -36,6 +36,22 @@
         "description": {
           "type": "description"
         },
+        "made_to_order": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Made to order",
+            "icon": "recycle",
+            "content": "<p>This product may be printed only after checkout. Add supplier-specific production and shipping timelines before launch.</p>"
+          }
+        },
+        "shipping_returns": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & returns",
+            "icon": "plane",
+            "content": "<p>Custom and made-to-order products may have different return rules. Replace this with your final policy before publishing.</p>"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -51,6 +67,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
+        "made_to_order",
+        "shipping_returns",
         "share"
       ],
       "settings": {

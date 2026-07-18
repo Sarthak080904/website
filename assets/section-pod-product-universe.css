@@ -1,0 +1,137 @@
+.pod-product-universe {
+  background: #10131a;
+  color: #ffffff;
+}
+
+.pod-product-universe__inner {
+  padding-block: clamp(4.8rem, 8vw, 9.6rem);
+}
+
+.pod-product-universe__header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(28rem, 0.55fr);
+  gap: 2.4rem;
+  align-items: end;
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.pod-product-universe__eyebrow {
+  margin: 0 0 1rem;
+  color: #7ddf9a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pod-product-universe__heading {
+  max-width: 74rem;
+  margin: 0;
+  font-size: clamp(3.2rem, 5vw, 6.8rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.pod-product-universe__text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.7rem;
+  line-height: 1.55;
+}
+
+.pod-product-universe__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.pod-product-universe__item {
+  position: relative;
+  min-height: 24rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.8rem;
+  padding: 2rem;
+  overflow: hidden;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+    var(--pod-card-color, #1d2634);
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 200ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+
+.pod-product-universe__item:hover {
+  transform: translateY(-0.5rem);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.pod-product-universe__item::after {
+  content: "";
+  position: absolute;
+  right: -4rem;
+  bottom: -5rem;
+  width: 16rem;
+  height: 16rem;
+  border: 2rem solid rgba(255, 255, 255, 0.12);
+  border-radius: 999rem;
+}
+
+.pod-product-universe__number {
+  display: inline-grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 999rem;
+  background: rgba(255, 255, 255, 0.16);
+  font-weight: 700;
+}
+
+.pod-product-universe__title {
+  position: relative;
+  margin: 7rem 0 0.8rem;
+  color: #ffffff;
+  font-size: clamp(2rem, 2.4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+  z-index: 1;
+}
+
+.pod-product-universe__description {
+  position: relative;
+  max-width: 24rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.4rem;
+  line-height: 1.45;
+  z-index: 1;
+}
+
+.pod-product-universe__link {
+  position: relative;
+  display: inline-flex;
+  margin-top: 2.4rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  z-index: 1;
+}
+
+@media screen and (max-width: 989px) {
+  .pod-product-universe__header {
+    grid-template-columns: 1fr;
+  }
+
+  .pod-product-universe__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .pod-product-universe__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pod-product-universe__item {
+    min-height: 20rem;
+  }
+}

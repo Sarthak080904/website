@@ -1,0 +1,113 @@
+{{ 'section-pod-process.css' | asset_url | stylesheet_tag }}
+
+<section class="pod-process">
+  <div class="pod-process__inner page-width">
+    <div class="pod-process__intro">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="pod-process__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 class="pod-process__heading">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.text != blank -%}
+        <div class="pod-process__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+    </div>
+
+    <ol class="pod-process__steps">
+      {%- for block in section.blocks -%}
+        <li class="pod-process__step" {{ block.shopify_attributes }}>
+          <span class="pod-process__number">{{ forloop.index }}</span>
+          <div>
+            <h3>{{ block.settings.title | escape }}</h3>
+            <p>{{ block.settings.text | escape }}</p>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "POD process",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "From order to delivery, without inventory risk."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Your store focuses on design, product discovery, trust, and checkout. Fulfillment can start manually, then move to supplier apps or automation once sales are proven.</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Customer orders"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "They choose size, color, design, and quantity, then pay securely through Shopify checkout."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "POD process",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Customer orders",
+            "text": "They choose size, color, design, and quantity, then pay securely through Shopify checkout."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Design goes to production",
+            "text": "The order details and uploaded artwork are sent to your print partner by app, CSV, API, or manual order."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Supplier prints and ships",
+            "text": "The supplier prints after purchase, packs the product, ships it, and returns tracking details."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "You manage support",
+            "text": "You handle customer communication, quality issues, replacements, and product improvements."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

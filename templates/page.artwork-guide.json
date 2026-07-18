@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pod-page-hero",
+      "settings": {
+        "eyebrow": "Artwork guide",
+        "heading": "Better files create better prints.",
+        "text": "<p>Use this guide to prepare designs for apparel, posters, stickers, mugs, packaging, and business print products.</p>"
+      }
+    },
+    "tips": {
+      "type": "pod-faq",
+      "blocks": {
+        "tip_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Use high resolution",
+            "answer": "<p>Upload the largest clean version of your design. For most print products, 300 DPI artwork is preferred when available.</p>"
+          }
+        },
+        "tip_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Transparent backgrounds help apparel",
+            "answer": "<p>For T-shirts and hoodies, transparent PNG files usually print cleaner than designs placed on a solid square background.</p>"
+          }
+        },
+        "tip_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Avoid tiny text",
+            "answer": "<p>Small text and fine lines may not print clearly on fabric. Keep lettering bold and readable from a distance.</p>"
+          }
+        },
+        "tip_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Check spelling before upload",
+            "answer": "<p>Custom products are printed from the submitted artwork. Review spelling, dates, names, and phone numbers carefully.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "tip_1",
+        "tip_2",
+        "tip_3",
+        "tip_4"
+      ],
+      "settings": {
+        "eyebrow": "Print-ready basics",
+        "heading": "A simple checklist before upload.",
+        "text": "<p>These guidelines reduce delays and help customers understand what makes a design suitable for production.</p>"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "tips"
+  ]
+}

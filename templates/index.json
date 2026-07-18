@@ -1,100 +1,114 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "pod_showcase": {
+      "type": "pod-showcase",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "stat_1": {
+          "type": "stat",
           "settings": {
-            "heading": "Wear it. Print it. Make it yours.",
-            "heading_size": "h0"
+            "value": "0",
+            "label": "inventory needed"
           }
         },
-        "button": {
-          "type": "buttons",
+        "stat_2": {
+          "type": "stat",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "Start customizing",
-            "button_link_2": "shopify://pages/custom-orders",
-            "button_style_secondary_2": true
+            "value": "24/7",
+            "label": "online ordering"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "value": "Many",
+            "label": "products from one design"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "stat_1",
+        "stat_2",
+        "stat_3"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "eyebrow": "Print on demand store",
+        "heading": "Design it once. Sell it everywhere.",
+        "text": "<p>Custom apparel, accessories, gifts, and print products made only after a customer orders. Discover ready designs or request a custom print, then your product is produced and shipped by our print partner.</p>",
+        "primary_label": "Shop products",
+        "primary_link": "shopify://collections/all",
+        "secondary_label": "Start custom order",
+        "secondary_link": "shopify://pages/custom-orders",
+        "image_alt": "Custom apparel and print-on-demand product mockups",
+        "workflow_title": "How each order works",
+        "step_1": "Choose a product, size, color, and design.",
+        "step_2": "We review artwork and send it for printing.",
+        "step_3": "The product is printed, packed, and shipped.",
+        "product_chips": "T-shirts, Hoodies, Mugs, Posters, Tote bags"
       }
     },
-    "collection_list": {
-      "type": "collection-list",
+    "product_universe": {
+      "type": "pod-product-universe",
       "blocks": {
-        "cat_1": {
-          "type": "featured_collection",
-          "settings": {}
+        "apparel": {
+          "type": "category",
+          "settings": {
+            "title": "Apparel",
+            "description": "T-shirts, oversized fits, polos, hoodies, sweatshirts, and kids wear.",
+            "link_label": "Shop apparel",
+            "link": "shopify://collections/all",
+            "color": "#1D2634"
+          }
         },
-        "cat_2": {
-          "type": "featured_collection",
-          "settings": {}
+        "accessories": {
+          "type": "category",
+          "settings": {
+            "title": "Accessories",
+            "description": "Caps, tote bags, phone cases, laptop sleeves, and everyday carry.",
+            "link_label": "Shop accessories",
+            "link": "shopify://collections/all",
+            "color": "#005EFF"
+          }
         },
-        "cat_3": {
-          "type": "featured_collection",
-          "settings": {}
+        "gifts": {
+          "type": "category",
+          "settings": {
+            "title": "Home and gifts",
+            "description": "Mugs, posters, cushions, decor, pet products, and gifting bundles.",
+            "link_label": "Shop gifts",
+            "link": "shopify://collections/all",
+            "color": "#F2553D"
+          }
         },
-        "cat_4": {
-          "type": "featured_collection",
-          "settings": {}
-        },
-        "cat_5": {
-          "type": "featured_collection",
-          "settings": {}
-        },
-        "cat_6": {
-          "type": "featured_collection",
-          "settings": {}
+        "business": {
+          "type": "category",
+          "settings": {
+            "title": "Business prints",
+            "description": "Cards, flyers, stickers, banners, labels, and marketing kits.",
+            "link_label": "Shop prints",
+            "link": "shopify://collections/all",
+            "color": "#157A4E"
+          }
         }
       },
       "block_order": [
-        "cat_1",
-        "cat_2",
-        "cat_3",
-        "cat_4",
-        "cat_5",
-        "cat_6"
+        "apparel",
+        "accessories",
+        "gifts",
+        "business"
       ],
       "settings": {
-        "title": "Shop by Category",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "show_view_all": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 48,
-        "padding_bottom": 36
+        "eyebrow": "Product universe",
+        "heading": "One design can become a full product line.",
+        "text": "<p>Start with proven everyday products, test what customers love, and keep expanding without buying inventory upfront.</p>"
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Best sellers",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
+        "title": "Featured products",
+        "heading_size": "h1",
+        "description": "<p>Add your best launch products here once the catalog is imported.</p>",
+        "show_description": true,
         "description_style": "body",
         "collection": "all",
         "products_to_show": 8,
@@ -104,16 +118,60 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
+        "swipe_on_mobile": true,
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "process": {
+      "type": "pod-process",
+      "blocks": {
+        "order": {
+          "type": "step",
+          "settings": {
+            "title": "Customer places an order",
+            "text": "They pick the product, design, size, color, and quantity, then pay securely through Shopify checkout."
+          }
+        },
+        "proof": {
+          "type": "step",
+          "settings": {
+            "title": "Artwork is checked",
+            "text": "For custom items, the uploaded design is reviewed for print quality before production starts."
+          }
+        },
+        "print": {
+          "type": "step",
+          "settings": {
+            "title": "Supplier prints and ships",
+            "text": "The print partner produces the item after purchase, packs it, ships it, and shares tracking."
+          }
+        },
+        "support": {
+          "type": "step",
+          "settings": {
+            "title": "We handle support",
+            "text": "Customers get help with artwork, delivery questions, damaged items, and replacements."
+          }
+        }
+      },
+      "block_order": [
+        "order",
+        "proof",
+        "print",
+        "support"
+      ],
+      "settings": {
+        "eyebrow": "Made after purchase",
+        "heading": "A lean store model built for testing and scaling.",
+        "text": "<p>No warehouse, no dead stock, no guessing which designs will sell. The site is designed to help customers understand the product, customize confidently, and check out smoothly.</p>"
       }
     },
     "trust_badges": {
@@ -123,7 +181,7 @@
           "type": "column",
           "settings": {
             "title": "Made to order",
-            "text": "<p>Every product is printed and produced only after you order \u2014 zero inventory, zero waste.</p>",
+            "text": "<p>Products are printed after checkout, helping reduce waste and support a bigger design catalog.</p>",
             "link_label": "",
             "link": ""
           }
@@ -131,8 +189,8 @@
         "badge_2": {
           "type": "column",
           "settings": {
-            "title": "Fully customizable",
-            "text": "<p>Add your own designs, text, or artwork to apparel, accessories, and print products.</p>",
+            "title": "Custom friendly",
+            "text": "<p>Upload artwork on eligible products or request a custom order for special prints and bulk needs.</p>",
             "link_label": "",
             "link": ""
           }
@@ -140,8 +198,8 @@
         "badge_3": {
           "type": "column",
           "settings": {
-            "title": "Pan-India shipping",
-            "text": "<p>Reliable delivery across India with tracked, doorstep shipping on every order.</p>",
+            "title": "Support first",
+            "text": "<p>Clear product details, artwork checks, tracked shipping, and help when an order needs attention.</p>",
             "link_label": "",
             "link": ""
           }
@@ -153,27 +211,75 @@
         "badge_3"
       ],
       "settings": {
-        "title": "Why shop with us",
+        "title": "Why customers can trust us",
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
         "columns_desktop": 3,
         "column_alignment": "center",
-        "background_style": "none",
+        "background_style": "primary",
         "button_label": "",
         "button_link": "",
         "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 48
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "faq": {
+      "type": "pod-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "How long will delivery take?",
+            "answer": "<p>Made-to-order products need production time before shipping. Add the final supplier timeline here after ordering samples and testing fulfillment.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I order my own custom design?",
+            "answer": "<p>Yes. Eligible products can include an artwork upload field. Use high-resolution PNG, JPG, or PDF files for the cleanest print result.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "What happens if the print arrives damaged?",
+            "answer": "<p>Customers should contact support with photos and the order number. Replace this with your final replacement policy before launch.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
+      "settings": {
+        "eyebrow": "Quick answers",
+        "heading": "Make the buying decision easy.",
+        "text": "<p>Use transparent details around production, customization, shipping, and returns so customers know exactly what to expect.</p>"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "full_width": true,
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     }
   },
   "order": [
-    "image_banner",
-    "collection_list",
+    "pod_showcase",
+    "product_universe",
     "featured_collection",
-    "trust_badges"
+    "process",
+    "trust_badges",
+    "faq",
+    "newsletter"
   ]
 }

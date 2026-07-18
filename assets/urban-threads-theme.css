@@ -1,0 +1,81 @@
+.button,
+.shopify-challenge__button,
+.customer button {
+  min-height: 4.6rem;
+  border-radius: 999rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.button:hover,
+.shopify-challenge__button:hover,
+.customer button:hover {
+  transform: translateY(-0.2rem);
+  box-shadow: 0 1.2rem 2.4rem rgba(16, 19, 26, 0.12);
+}
+
+.header-wrapper {
+  border-bottom: 0.1rem solid rgba(18, 18, 18, 0.08);
+}
+
+.header__heading-logo-wrapper,
+.header__heading-link {
+  letter-spacing: 0;
+}
+
+.card,
+.collection-card-wrapper .card,
+.product-card-wrapper .card,
+.multicolumn-card,
+.content-container {
+  border-radius: 0.8rem;
+}
+
+.card__media .media,
+.global-media-settings,
+.media {
+  border-radius: 0.8rem;
+}
+
+.price {
+  letter-spacing: 0;
+}
+
+.badge {
+  border-radius: 999rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.field__input,
+.select__select,
+.customer .field input,
+.customer select {
+  border-radius: 0.8rem;
+}
+
+.title,
+.main-page-title,
+.collection-hero__title,
+.product__title h1 {
+  letter-spacing: 0;
+}
+
+.rte a {
+  text-underline-offset: 0.3rem;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .button,
+  .shopify-challenge__button,
+  .customer button {
+    transition: none;
+  }
+
+  .button:hover,
+  .shopify-challenge__button:hover,
+  .customer button:hover {
+    transform: none;
+  }
+}
